@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const [showNavOptions, setShowNavOptions] = useState(false);
   const navOptionsRef = useRef(null);
+  const blue = "text-[var(--medium-blue)]";
+  const black = "text-[var(--charcoal-black)]";
 
   useEffect(() => {
     if (showNavOptions) {
@@ -28,11 +31,56 @@ export const Navbar = () => {
       ref={navOptionsRef}
       className="nav-options list-none hidden justify-evenly items-center flex-col w-full md:flex-row md:w-[70%] md:flex"
     >
-      <li className="p-2 md:p-0">Welcome</li>
-      <li className="p-2 md:p-0">My Journey</li>
-      <li className="p-2 md:p-0">My Learning Path</li>
-      <li className="p-2 md:p-0">Achienvements</li>
-      <li className="p-2 md:p-0">Tech Arsenal</li>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
+          }
+        >
+          Welcome
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="my-journey"
+          className={({ isActive }) =>
+            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
+          }
+        >
+          My Journey
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="my-learning-path"
+          className={({ isActive }) =>
+            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
+          }
+        >
+          My Learning Path
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="achievements"
+          className={({ isActive }) =>
+            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
+          }
+        >
+          Achienvements
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="tech-arsenal"
+          className={({ isActive }) =>
+            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
+          }
+        >
+          Tech Arsenal
+        </NavLink>
+      </li>
     </ul>
   );
 

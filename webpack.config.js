@@ -30,6 +30,7 @@ module.exports = {
     static: "./dist",
     host: "localhost",
     port: 3000,
+    historyApiFallback: true, // Enable this for client-side routing support
     open: true,
     hot: true,
   },
