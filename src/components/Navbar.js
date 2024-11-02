@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { navLinks } from "../utils/constants";
 
 export const Navbar = () => {
   const [showNavOptions, setShowNavOptions] = useState(false);
@@ -31,56 +32,18 @@ export const Navbar = () => {
       ref={navOptionsRef}
       className="nav-options list-none hidden justify-evenly items-center flex-col w-full md:flex-row md:w-[70%] md:flex"
     >
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Welcome
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="my-journey"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          My Journey
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="my-learning-path"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          My Learning Path
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="achievements"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Achienvements
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="tech-arsenal"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Tech Arsenal
-        </NavLink>
-      </li>
+      {navLinks.map((option) => (
+        <li key={option?.value}>
+          <NavLink
+            to={option?.value}
+            className={({ isActive }) =>
+              `custom-navlink p-2 md:p-0 hover:text-[var(--medium-blue)] ${isActive ? blue : black}`
+            }
+          >
+            {option?.label}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
 
