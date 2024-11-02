@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito+Sans:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+    --dark-blue: #1E3A8A; /* Dark Blue */
+    --medium-blue: #2563EB; /* Medium Blue */
+    --light-blue: #60A5FA; /* Light Blue */
+    --jet-black: #000000; /* Jet Black */
+    --charcoal-black: #1F2937; /* Charcoal Black */
+    --soft-black: #374151; /* Soft Black */
+    --soft-white: #F8FAFC;     /* Ghost White */
+}
+
+@layer utilities {
+    .bg-custom-dark-blue {
+        background-color: var(--dark-blue);
+    }
+
+    .bg-custom-medium-blue {
+        background-color: var(--medium-blue);
+    }
+    .text-custom-black {
+        color: var(--jet-black);
+    }
+
+    .text-custom-charcoal {
+        color: var(--charcoal-black);
+    }
+
+    .text-custom-soft-black {
+        color: var(--soft-black);
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--soft-white);
+    font-family:  "Manrope";
+}

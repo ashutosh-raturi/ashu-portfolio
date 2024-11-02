@@ -1,0 +1,8 @@
+.nav-options>li {
+    color: var(--charcoal-black);
+    cursor: pointer;
+}
+
+.nav-options>li:hover {
+    color: var(--medium-blue);
+}
