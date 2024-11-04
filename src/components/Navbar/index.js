@@ -6,8 +6,8 @@ import { navLinks } from "../../utils/constants";
 export const Navbar = () => {
   const [showNavOptions, setShowNavOptions] = useState(false);
   const navOptionsRef = useRef(null);
-  const blue = "text-[var(--medium-blue)]";
-  const black = "text-[var(--charcoal-black)]";
+  const blue = "text-[var(--secondary-color)]";
+  const black = "text-[var(--text-dark)]";
 
   useEffect(() => {
     if (showNavOptions) {
@@ -19,9 +19,9 @@ export const Navbar = () => {
   }, [showNavOptions]);
 
   const heading = (
-    <h1 className="cursor-pointer text-custom-charcoal font-black text-sm lg:text-xl">
+    <h1 className="cursor-pointer text-[var(--primary-color)] font-black text-sm lg:text-xl">
       Ashutosh Raturi
-      <span className="text-custom-soft-black font-light text-xs lg:text-lg">
+      <span className="text-[var(--text-dark)] font-light text-xs lg:text-lg">
         &nbsp; / UI ENGINEER
       </span>
     </h1>
@@ -66,7 +66,7 @@ export const Navbar = () => {
   );
 
   return (
-    <header>
+    <header className="bg-white">
       <nav className="p-4">
         <div className="nav-container flex justify-between flex-col md:flex-row items-center">
           {heading}
