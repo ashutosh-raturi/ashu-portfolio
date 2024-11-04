@@ -6,36 +6,17 @@
 
 
 :root {
-    --dark-blue: #1E3A8A; /* Dark Blue */
-    --medium-blue: #2563EB; /* Medium Blue */
-    --light-blue: #60A5FA; /* Light Blue */
+    --primary-color: #a855f7;
+    --primary-color-dark: #9333ea;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
     --jet-black: #000000; /* Jet Black */
     --charcoal-black: #1F2937; /* Charcoal Black */
     --soft-black: #374151; /* Soft Black */
     --soft-white: #F8FAFC;     /* Ghost White */
 }
-
-@layer utilities {
-    .bg-custom-dark-blue {
-        background-color: var(--dark-blue);
-    }
-
-    .bg-custom-medium-blue {
-        background-color: var(--medium-blue);
-    }
-    .text-custom-black {
-        color: var(--jet-black);
-    }
-
-    .text-custom-charcoal {
-        color: var(--charcoal-black);
-    }
-
-    .text-custom-soft-black {
-        color: var(--soft-black);
-    }
-}
-
 
 * {
     margin: 0;
@@ -44,6 +25,6 @@
 }
 
 body {
-    background-color: var(--soft-white);
+    background-color: var(--extra-light);
     font-family:  "Manrope";
 }
