@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { navLinks } from "../utils/constants";
+import { navLinks } from "../../utils/constants";
 
 export const Navbar = () => {
   const [showNavOptions, setShowNavOptions] = useState(false);
