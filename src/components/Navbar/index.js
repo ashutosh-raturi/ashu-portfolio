@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { navLinks } from "../../utils/constants";
 
 export const Navbar = () => {
   const [showNavOptions, setShowNavOptions] = useState(false);
   const navOptionsRef = useRef(null);
-  const blue = "text-[var(--medium-blue)]";
-  const black = "text-[var(--charcoal-black)]";
+  const blue = "text-[var(--secondary-color)]";
+  const black = "text-[var(--text-dark)]";
 
   useEffect(() => {
     if (showNavOptions) {
@@ -18,9 +19,9 @@ export const Navbar = () => {
   }, [showNavOptions]);
 
   const heading = (
-    <h1 className="cursor-pointer text-custom-charcoal font-black text-sm lg:text-xl">
+    <h1 className="cursor-pointer text-[var(--primary-color)] font-black text-sm lg:text-xl">
       Ashutosh Raturi
-      <span className="text-custom-soft-black font-light text-xs lg:text-lg">
+      <span className="text-[var(--text-dark)] font-light text-xs lg:text-lg">
         &nbsp; / UI ENGINEER
       </span>
     </h1>
@@ -31,56 +32,18 @@ export const Navbar = () => {
       ref={navOptionsRef}
       className="nav-options list-none hidden justify-evenly items-center flex-col w-full md:flex-row md:w-[70%] md:flex"
     >
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Welcome
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="my-journey"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          My Journey
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="my-learning-path"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          My Learning Path
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="achievements"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Achienvements
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="tech-arsenal"
-          className={({ isActive }) =>
-            `custom-navlink p-2 md:p-0 ${isActive ? blue : black}`
-          }
-        >
-          Tech Arsenal
-        </NavLink>
-      </li>
+      {navLinks.map((option) => (
+        <li key={option?.value}>
+          <NavLink
+            to={option?.value}
+            className={({ isActive }) =>
+              `custom-navlink p-2 md:p-0 hover:text-[var(--medium-blue)] ${isActive ? blue : black}`
+            }
+          >
+            {option?.label}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
 
@@ -103,7 +66,7 @@ export const Navbar = () => {
   );
 
   return (
-    <header>
+    <header className="bg-white">
       <nav className="p-4">
         <div className="nav-container flex justify-between flex-col md:flex-row items-center">
           {heading}

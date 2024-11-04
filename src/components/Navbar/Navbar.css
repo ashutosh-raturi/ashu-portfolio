@@ -1,10 +1,10 @@
 .nav-options>li {
-    color: var(--charcoal-black);
+    color: var(--text-dark);
     cursor: pointer;
 }
 
 .nav-options>li:hover {
-    color: var(--medium-blue);
+    color: var(--secondary-color);
 }
 
 .custom-navlink {
