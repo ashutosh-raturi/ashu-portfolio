@@ -67,7 +67,7 @@ export const Navbar = () => {
 
   return (
     <header className="bg-white">
-      <nav className="p-4">
+      <nav className="p-6">
         <div className="nav-container flex justify-between flex-col md:flex-row items-center">
           {heading}
           {navOptions}
