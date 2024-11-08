@@ -33,7 +33,7 @@ export const Navbar = () => {
       className="nav-options list-none hidden justify-evenly items-center flex-col w-full md:flex-row md:w-[70%] md:flex"
     >
       {navLinks.map((option) => (
-        <li key={option?.value}>
+        <li key={option?.value} onClick={() => setShowNavOptions(false)}>
           <NavLink
             to={option?.value}
             className={({ isActive }) =>
