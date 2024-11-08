@@ -2,8 +2,16 @@ import React from "react";
 import Button from "../components/Button";
 import Avatar from "../components/Avatar";
 import pic from "../assets/avatar.jpg";
+import { body, subject } from "../utils/constants";
 
 const Home = () => {
+  const handleHireMeClick = () => {
+    const email = process.env.REACT_APP_MY_EMAIL;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   const handleResumeDownload = (e) => {
     const link = document.createElement("a");
     link.href = process.env.REACT_APP_RESUME_URL;
@@ -27,17 +35,16 @@ const Home = () => {
         Web UI Specialist
       </h2>
       <p className="md:text-left text-[var(--text-light)] leading-7 font-medium text-center">
-        Welcome to my portfolio! I'm an experienced front-end
-        developer with a strong focus on building dynamic, responsive, and
-        visually appealing web applications. With expertise in React,
-        JavaScript, and modern UI frameworks, I bring creativity and
-        functionality together to craft seamless user experiences. From
-        interactive single-page applications to complex front-end solutions, my
-        projects reflect my commitment to quality and innovation in web
-        development.
+        Welcome to my portfolio! I'm an experienced front-end developer with a
+        strong focus on building dynamic, responsive, and visually appealing web
+        applications. With expertise in React, JavaScript, and modern UI
+        frameworks, I bring creativity and functionality together to craft
+        seamless user experiences. From interactive single-page applications to
+        complex front-end solutions, my projects reflect my commitment to
+        quality and innovation in web development.
       </p>
       <div className="w-full flex md:justify-start justify-center mt-8">
-        <Button className="mr-4" type="primary">
+        <Button className="mr-4" type="primary" onClick={handleHireMeClick}>
           Hire Me
         </Button>
         <Button type="outline" onClick={handleResumeDownload}>
