@@ -1,0 +1,18 @@
+.nav-options>li {
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.nav-options>li:hover {
+    color: var(--secondary-color);
+}
+
+.custom-navlink {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nav-options>li {
+        padding: 1rem;
+    }
+}

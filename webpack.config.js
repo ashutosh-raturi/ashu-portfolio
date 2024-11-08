@@ -1,5 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = {
   entry: "./src/index.js",
@@ -19,17 +22,33 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
+    }),
   ],
   devServer: {
     static: "./dist",
     host: "localhost",
     port: 3000,
+    historyApiFallback: true, // Enable this for client-side routing support
     open: true,
     hot: true,
   },
