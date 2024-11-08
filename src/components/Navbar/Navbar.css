@@ -10,3 +10,9 @@
 .custom-navlink {
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .nav-options>li {
+        padding: 1rem;
+    }
+}
