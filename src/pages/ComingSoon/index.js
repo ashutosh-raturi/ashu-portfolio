@@ -10,7 +10,7 @@ const ComingSoon = () => {
       </div>
       <h2 className="text-[var(--text-dark)] text-3xl italic mt-10 md:mt-2 mb-8">
         Coming soon
-        <span class="dots">
+        <span className="dots">
           <span>.</span>
           <span>.</span>
           <span>.</span>
