@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import MyJourney from "../pages/MyJourney";
 import MyLearningPath from "../pages/MyLearningPath";
 import ErrorPage from "../pages/ErrorPage";
+import ComingSoon from "../pages/ComingSoon";
 
 const config = [
   {
@@ -17,12 +18,21 @@ const config = [
       },
       {
         path: "/my-journey",
-        element: <MyJourney />,
+        element: <ComingSoon />,
       },
       {
         path: "/my-learning-path",
-        element: <MyLearningPath />,
+        element: <ComingSoon />,
       },
+      {
+        path: "/achievements",
+        element: <ComingSoon />,
+      },
+      {
+        path: "/tech-arsenal",
+        element: <ComingSoon />,
+      },
+
     ],
     errorElement: <ErrorPage/>
   },

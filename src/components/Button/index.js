@@ -1,8 +1,8 @@
 import React from "react";
 import './Button.css';
 
-const Button = ({ text, onClick, type = "primary", isDisabled, children }) => {
-  const btnClasses = `btn btn-${type}`;
+const Button = ({ text, onClick, type = "primary", isDisabled, className, children }) => {
+  const btnClasses = `btn btn-${type} `.concat(className ? className : '');
   const handleOnClick = () => {
     onClick();
   };

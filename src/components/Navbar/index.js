@@ -19,12 +19,18 @@ export const Navbar = () => {
   }, [showNavOptions]);
 
   const heading = (
-    <h1 className="cursor-pointer text-[var(--primary-color)] font-black text-sm lg:text-xl">
-      Ashutosh Raturi
-      <span className="text-[var(--text-dark)] font-light text-xs lg:text-lg">
-        &nbsp; / UI ENGINEER
-      </span>
-    </h1>
+    <NavLink
+      to="/"
+      className="cursor-pointer text-[var(--primary-color)] font-black no-underline"
+      onClick={() => setShowNavOptions(false)}
+    >
+      <h1 className="text-sm lg:text-xl">
+        Ashutosh Raturi
+        <span className="text-[var(--text-dark)] font-light text-xs lg:text-lg">
+          &nbsp; / UI ENGINEER
+        </span>
+      </h1>
+    </NavLink>
   );
 
   const navOptions = (
@@ -33,11 +39,13 @@ export const Navbar = () => {
       className="nav-options list-none hidden justify-evenly items-center flex-col w-full md:flex-row md:w-[70%] md:flex"
     >
       {navLinks.map((option) => (
-        <li key={option?.value}>
+        <li key={option?.value} onClick={() => setShowNavOptions(false)}>
           <NavLink
             to={option?.value}
             className={({ isActive }) =>
-              `custom-navlink p-2 md:p-0 hover:text-[var(--medium-blue)] ${isActive ? blue : black}`
+              `custom-navlink p-2 md:p-0 hover:text-[var(--medium-blue)] ${
+                isActive ? blue : black
+              }`
             }
           >
             {option?.label}
