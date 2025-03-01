@@ -21,7 +21,7 @@ const Home = () => {
 
   const avatarSection = (
     <div className="md:mx-5">
-      <Avatar src={pic} />
+      <Avatar src={pic} alt={"Ashutosh Raturi"}/>
     </div>
   );
 
